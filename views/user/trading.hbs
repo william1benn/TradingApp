@@ -1,0 +1,80 @@
+
+<h1>ETH/BTC</h1>
+
+   
+<div class="ticker">
+<label>Bitcoin Price:$</label><span id="usdbtc"></span>
+</div>
+
+<div id ="btc" class="wallet">
+<label>Bitcoin Wallet:</label>
+</div>
+
+<div id="deposit" class="DepostAddress">
+<label>BTC Deposit Address:</label>
+</div>
+
+<br>
+
+<div>
+<label>Ethereum Price:$</label><span id="usdeth"></span>
+</div>
+
+<div id="ethwallet" class= "ethwallet">
+<label>Ethereum Wallet:</label>
+</div>
+
+<div id="ethdeposit">
+<label>ETH Deposit Address:</label>
+</div>
+
+
+<div class= "main-charts">
+  <div id="chart-contain">
+     
+  </div>
+
+<div class="buysellform">
+
+  <div>
+    <h2 class="buy-selltitle">Buy Ethereum</h2>
+    <form id="ethbuy" action='/trading/ethbtcbuy' method='POST'>
+    <input type="number" name="rate" id="rateeth" class='buy-sellinput' placeholder="rate">
+    <br><br>
+    <input type="number" name="amountEth" id="amountEth" class='buy-sellinput' placeholder="amount">
+    <br><br>
+    <button class="buy-btn">Buy ETH</button>
+    </form>
+  </div>
+
+  <div class='sellbox'>
+    <h2 class="buy-selltitle">Sell Ethereum</h2>
+    <form id="ethsell" action='/trading/ethbtcselling' method='POST'>
+    <input type="number" name="rate" id="rateeth" class='buy-sellinput' placeholder="rate">
+    <br><br>
+    <input type="number" name="amountEth" id="amountEth" class='buy-sellinput' placeholder="amount">
+    <br><br>
+    <a><button class="sell-btn">Sell ETH</button></a>
+    </form>
+  </div>
+  {{#unless currentUser}}
+    <div class="auth-form" id="auth-form">
+      <div class="block-btns">
+        <button onclick="toggleDropdown()" class="login-btn-block" id='loginblock'>Login</button>
+        <form action="/signup" method="GET">
+        <button id ="signup-block" class='signup-btn-block'>Signup</button>
+        </form>
+      </div>
+    </div>
+    {{/unless}}
+  {{#if currentUser}}
+    <div class="auth-form hide-form" id="auth-form">
+      <div class='block-btns'>
+        <button onclick="toggleDropdown()" class="login-btn-block">Login</button>
+        <button class='signup-btn-block'>Signup</button>
+      </div>
+    </div>
+  {{/if}}  
+</div>
+</div>
+  <script src="/javascripts/script.js"></script>

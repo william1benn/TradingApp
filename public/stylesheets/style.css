@@ -1,0 +1,280 @@
+body {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  padding: 50px;
+  background-color: #000000;
+  color: #cccccc; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+#chart-contain {
+  width: 80%;
+  height: 552px; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+.navbar {
+  font-size: 14px;
+  background-color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 10px; }
+
+.main-nav {
+  list-style-type: none;
+  display: none; }
+
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7); }
+
+.main-nav li {
+  text-align: center;
+  margin: 15px auto; }
+
+.logo {
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 20px; }
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px; }
+
+.active {
+  display: block; }
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center; }
+  .main-nav {
+    display: flex;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end; }
+  .main-nav li {
+    margin: 0; }
+  .nav-links {
+    margin-left: 40px; }
+  .logo {
+    margin-top: 0; }
+  .navbar-toggle {
+    display: none; }
+  .logo:hover,
+  .nav-links:hover {
+    color: white; } }
+
+.dropdown {
+  background-color: #000000;
+  border: 1px solid #cccccc;
+  padding: 3% 9% 2% 1.5%;
+  position: absolute;
+  right: 2px;
+  top: 100px;
+  display: none; }
+
+.visible {
+  display: inline-block; }
+
+form.login-form {
+  display: flex;
+  flex-direction: column; }
+
+.inputStyling {
+  font-family: 'Space Mono', monospace;
+  color: #cccccc;
+  background-color: #323642;
+  padding: 4%;
+  border: none;
+  width: 158%; }
+
+#loginBtn {
+  color: #cccccc;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  background-color: #66926e;
+  font-size: 12px;
+  padding: 3px 19px 3px 0;
+  width: 43%; }
+
+#loginBtn:hover {
+  background-color: #23cc75;
+  color: #cccccc;
+  border: none;
+  transition: 500ms; }
+
+.main-charts {
+  display: flex;
+  margin-top: 3%; }
+
+.buy-sellinput {
+  font-family: 'Space Mono', monospace;
+  color: #cccccc;
+  background-color: #323642;
+  padding: 4%;
+  border: none;
+  width: 128%; }
+
+.buysellform {
+  position: relative;
+  padding-left: 4%;
+  padding-top: 5%; }
+
+.sellbox {
+  padding-top: 50%; }
+
+.buy-btn {
+  color: #cccccc;
+  border-color: #23cc75;
+  font-family: 'Space Mono', monospace;
+  background-color: #173a04;
+  font-size: 12px;
+  padding: 3px;
+  width: 43%;
+  text-align: center; }
+
+.buy-btn:hover {
+  color: #cccccc;
+  border-color: #173a04;
+  font-family: 'Space Mono', monospace;
+  background-color: #23cc75;
+  font-size: 12px;
+  padding: 3px;
+  width: 43%;
+  text-align: center;
+  transition: 500ms; }
+
+.sell-btn {
+  color: #cccccc;
+  border-color: #d12a2a;
+  font-family: 'Space Mono', monospace;
+  background-color: #7e4439;
+  font-size: 12px;
+  padding: 3px;
+  width: 43%;
+  text-align: center; }
+
+.sell-btn:hover {
+  color: #cccccc;
+  background-color: #7e4439;
+  font-family: 'Space Mono', monospace;
+  background-color: #e1595b;
+  font-size: 12px;
+  padding: 3px;
+  width: 43%;
+  text-align: center;
+  transition: 500ms; }
+
+.buy-selltitle {
+  font-size: 190%;
+  padding-bottom: 7%; }
+
+.register {
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10%;
+  border: 1px solid #cccccc;
+  padding: 6% 0% 5% -0.5%;
+  width: 27%;
+  margin: 158px auto 0 auto;
+  padding-top: 2%;
+  padding-bottom: 2%; }
+
+#signupbtn {
+  color: #cccccc;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  background-color: #66926e;
+  font-size: 12px;
+  padding: 15px 25px;
+  width: 60%; }
+
+.signupbtn:hover {
+  background-color: #23cc75;
+  transition: 1000ms; }
+
+#account-create-title {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5%; }
+
+.create-acc-input {
+  font-family: 'Space Mono', monospace;
+  color: #cccccc;
+  background-color: #323642;
+  border: none;
+  width: 100%;
+  padding: 2%;
+  margin-bottom: 11px; }
+
+#form {
+  text-align: center;
+  padding: 0 30px; }
+
+.tos {
+  padding-bottom: 7px; }
+
+thead {
+  text-align: left;
+  font-size: 18px; }
+
+th {
+  border-bottom: 1px solid #cccccc; }
+
+table {
+  width: 100%; }
+
+.auth-form {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.hide-form {
+  display: none; }
+
+.trueLogin {
+  display: none; }
+
+.block-btns {
+  display: flex; }
+
+.signup-btn-block {
+  border-color: #cccccc;
+  background-color: #323642;
+  color: #cccccc;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  padding: 8px 23px;
+  margin-left: 8px; }
+
+.login-btn-block {
+  border-color: #cccccc;
+  background-color: #323642;
+  color: #cccccc;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  padding: 8px 23px; }
+
+/*# sourceMappingURL=style.css.map */

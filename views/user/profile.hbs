@@ -1,0 +1,60 @@
+
+
+
+
+<div>
+  <h2>Profile</h2>
+</div>
+
+<div>
+ <h5>Enter Api Keys</h5>
+</div>
+
+<form id="form" action="/profile" method="POST">
+    <label for="pubKey">Public Api Key:</label>
+    <input type="text" name="pubKey"
+      placeholder="Public Api Key">
+
+    <label for="priKey">Secret Api Key:</label>
+    <input type="text" name="priKey" placeholder="Secret Api Key">
+  
+
+
+     <input type="submit" name="submit">
+  </form>
+
+<div>
+
+<button type="submit" name="submit" id="historyBtn"> History </button>
+
+</div>
+
+
+<div>
+<form action="/deleteaccount" method="POST">
+
+<button id="deleteBtn">Delete Account </button>
+
+</form>
+</div>
+
+
+
+<div>
+  <table>
+  <thead>
+    <th>Amount</th>
+    <th>Date</th> 
+    <th>Order Number</th>
+    <th>Type</th>
+    <th>TradeID</th>
+  </thead>
+  <tbody id="tableHistory">
+
+  </tbody>
+</table>
+</div>
+
+ <script type="text/javascript" src="javascripts/login.js"></script>
+  <script type="text/javascript" src="javascripts/moneroLogin.js"></script>
+  <script src="/javascripts/profile.js"></script>

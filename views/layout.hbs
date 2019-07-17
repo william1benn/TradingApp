@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  
+  <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="/trading" class="logo">CryptoTrade</a>
+        <ul class="main-nav" id="js-menu">
+
+{{#if currentUser}}
+            <li>
+                <a href="/profile" class="nav-links loggedIn trueLogin">Profile</a>
+            </li>
+{{/if}}
+            <li>
+                <a href="/trading" class="nav-links">ETH/BTC</a>
+            </li>
+            <li>
+                <a href="/xmr" class="nav-links">XMR/BTC</a>
+            </li>
+{{#unless currentUser}}
+            <li>
+                <a onclick="toggleDropdown()" class="nav-links">login</a>
+            </li>
+{{/unless}}
+{{#if currentUser}}
+             <li>
+                <a id="logoutelement" href="/logout" class="nav-links loggedIn trueLogin">logout</a>
+            </li>
+{{/if}}
+{{#unless currentUser}}
+             <li>
+                <a href="/signup" class="nav-links">register</a>
+            </li>
+{{/unless}}
+
+
+        </ul>
+    </nav>
+
+
+  {{{body}}}
+
+  <div class="dropdown" id="dropdown">
+    <form class="login-form" id='loginapp'> 
+    <input class = "inputStyling" type="text" name="username" placeholder="username" id="name">
+     <br>
+    <input class = "inputStyling" type="password" name="password" placeholder="password" id= "password">
+    <br>
+    <button id="loginBtn">Login</button>
+      </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script type="text/javascript" src="https://static.cryptowat.ch/assets/scripts/embed.bundle.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/dropdown.js"></script>
+   <script type="text/javascript" src="javascripts/login.js"></script>
+   <script type= "text/javascript" src="javascripts/features.js"></script>
+ 
+
+
+</body>
+</html>
