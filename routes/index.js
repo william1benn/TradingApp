@@ -23,10 +23,15 @@ router.post("/signup", (req, res, next) => {
   const pubKey = req.body.pubKey;
   const priKey = req.body.priKey;
 
+console.log(username,password, '----------------------------------------')
+
   if(username ==='' || password===''){
     console.log("you need to enter a username and password");
     res.redirect('/signup')
+    return 
   }else{
+
+console.log("We are in the else fool")
 
   let encrypted = encryptor.encrypt(priKey);
 
@@ -37,8 +42,11 @@ User.findOne({ "username": username })
 .then(user => {
   if (user !== null) {
       res.redirect("/signup");
+      return;
     }
  //--------
+
+console.log("Creating the user here hjkkjh")
 
  User.create({
   username,
@@ -46,27 +54,16 @@ User.findOne({ "username": username })
   apikey:pubKey,
   secretKey:encrypted,
 }).then((user) => {
-    if (user !== null) {
-        res.render("auth/signup", {
-          errorMessage: "The username already exists!"
-        })
-    }
-}).then(() => {
-  if (username =='' || password =='') {
-    res.render("auth/signup", {
-      errorMessage: "Indicate a username and a password to sign up"
-    })
-   } else{
-      res.redirect("/trading");
-    }
+
+console.log("We gonna redirect.....maybe")
+
+  res.redirect("/")
+
+
+   
 }).catch(error => {
   console.log(error);
 })
-.catch(err => {
-  console.log(err);
- })
- //--------
-
   }).catch(err=>{
     console.log(err)
   });

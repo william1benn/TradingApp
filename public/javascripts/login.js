@@ -9,7 +9,7 @@ const blockbtnsign = document.querySelector('.signup-btn-block');
 
 document.getElementById('loginapp').onsubmit = function(e){
   e.preventDefault();
-  axios.post('http://localhost:4000/login', {
+  axios.post('/login', {
 
     username: userName.value,
     password: pass.value,
@@ -22,10 +22,7 @@ document.getElementById('loginapp').onsubmit = function(e){
     $('#registerID').toggleClass('trueLogin');
     $("#profileID").toggleClass('trueLogin');
     $('#logoutelement').toggleClass('trueLogin');
-    // $(".loggedIn").removeClass('trueLogin');
-    // $(".loggin").removeClass('trueLogin');
-
-
+   
       const form = document.getElementById('auth-form');
      
       if(!form.classList.contains('hide-form')) {
