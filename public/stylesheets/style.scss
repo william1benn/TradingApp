@@ -2,19 +2,19 @@ body {
   font-family: 'Space Mono', monospace;
   font-size: 12px;
   padding: 50px;
-  background-color:#000000;
-  color:#cccccc;
+  background-color: #000000;
+  color: #cccccc;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-#chart-contain{
-    width: 80%;
-    height: 552px;
+#chart-contain {
+  width: 80%;
+  height: 552px;
 }
 
 //NavBar Styling
@@ -25,18 +25,18 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-
-
 .navbar {
   font-size: 14px;
-  background-color:#000000;
+  background-color: #000000;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 10px;
 }
 
 .main-nav {
   list-style-type: none;
-  display: none;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
 .nav-links,
@@ -47,7 +47,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .main-nav li {
   text-align: center;
-  margin: 15px auto;
+  margin: 15px 15px;
 }
 
 .logo {
@@ -70,41 +70,45 @@ input[type=number]::-webkit-outer-spin-button {
   display: block;
 }
 
-@media screen and (min-width: 768px) {
+
+
+@media screen and (max-width: 768px) {
   .navbar {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 0;
-      height: 70px;
-      align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+    color: #cccccc;
   }
 
   .main-nav {
-      display: flex;
-      margin-right: 30px;
-      flex-direction: row;
-      justify-content: flex-end;
+    display: flex;
+    margin-right: 30px;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .main-nav li {
-      margin: 0;
+    margin: 0;
+
   }
 
   .nav-links {
-      margin-left: 40px;
+    margin-left: 40px;
   }
 
   .logo {
-      margin-top: 0;
+    margin-top: 0;
   }
 
   .navbar-toggle {
-      display: none;
+    display: none;
   }
 
   .logo:hover,
   .nav-links:hover {
-      color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
   }
 }
 
@@ -116,7 +120,7 @@ input[type=number]::-webkit-outer-spin-button {
   right: 2px;
   top: 100px;
   display: none;
-  
+
 }
 
 .visible {
@@ -128,7 +132,7 @@ form.login-form {
   flex-direction: column;
 }
 
-.inputStyling{
+.inputStyling {
   font-family: 'Space Mono', monospace;
   color: #cccccc;
   background-color: #323642;
@@ -137,7 +141,7 @@ form.login-form {
   width: 158%;
 }
 
-#loginBtn{
+#loginBtn {
   color: #cccccc;
   border: none;
   font-family: 'Space Mono', monospace;
@@ -145,55 +149,57 @@ form.login-form {
   font-size: 12px;
   padding: 3px 19px 3px 0;
   width: 43%;
+  border-radius: 4px;
 }
 
 #loginBtn:hover {
-    background-color:#23cc75;
-    color: #cccccc;
-    border: none;
-    transition: 500ms;
+  background-color: #23cc75;
+  color: #cccccc;
+  border: none;
+  transition: 500ms;
 }
 
-.main-charts{
+.main-charts {
   display: flex;
   margin-top: 3%;
 }
 
-.buy-sellinput{
+.buy-sellinput {
   font-family: 'Space Mono', monospace;
-    color: #cccccc;
-    background-color: #323642;
-    padding: 4%;
-    border: none;
-    width: 128%;
+  color: #cccccc;
+  background-color: #323642;
+  padding: 4%;
+  border: none;
+  width: 128%;
 }
 
-.buysellform{
+.buysellform {
   position: relative;
   padding-left: 4%;
   padding-top: 5%;
 }
 
-.sellbox{
+.sellbox {
   padding-top: 50%;
 }
 
-.buy-btn{
+.buy-btn {
   color: #cccccc;
   border-color: #23cc75;
   font-family: 'Space Mono', monospace;
-  background-color:#173a04;
+  background-color: #173a04;
   font-size: 12px;
   padding: 3px;
   width: 43%;
   text-align: center;
+  border-radius: 4px;
 }
 
-.buy-btn:hover{
+.buy-btn:hover {
   color: #cccccc;
-  border-color:#173a04;
+  border-color: #173a04;
   font-family: 'Space Mono', monospace;
-  background-color:#23cc75;
+  background-color: #23cc75;
   font-size: 12px;
   padding: 3px;
   width: 43%;
@@ -201,23 +207,24 @@ form.login-form {
   transition: 500ms;
 }
 
-.sell-btn{
+.sell-btn {
   color: #cccccc;
-  border-color:#d12a2a;
+  border-color: #d12a2a;
   font-family: 'Space Mono', monospace;
   background-color: #7e4439;
   font-size: 12px;
   padding: 3px;
   width: 43%;
   text-align: center;
+  border-radius: 4px;
 
 }
 
-.sell-btn:hover{
+.sell-btn:hover {
   color: #cccccc;
   background-color: #7e4439;
   font-family: 'Space Mono', monospace;
-  background-color:#e1595b;
+  background-color: #e1595b;
   font-size: 12px;
   padding: 3px;
   width: 43%;
@@ -225,145 +232,202 @@ form.login-form {
   transition: 500ms;
 }
 
-.buy-selltitle{
+.buy-selltitle {
   font-size: 190%;
   padding-bottom: 7%;
 }
 
-  .register {
-    display: flex;
-    height: 400px;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 10%;
-    border: 1px solid #cccccc;
-    padding: 6% 0% 5% -0.5%;
-    width: 27%;
-    margin: 158px auto 0 auto;
-    padding-top: 2%;
-    padding-bottom: 2%;
+.register {
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10%;
+  border: 1px solid #cccccc;
+  padding: 6% 0% 5% -0.5%;
+  width: 27%;
+  margin: 158px auto 0 auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
-#signupbtn{
+#signupbtn {
   color: #cccccc;
   border: none;
   font-family: 'Space Mono', monospace;
-  background-color:#66926e;
+  background-color: #66926e;
   font-size: 12px;
   padding: 15px 25px;
   width: 60%;
+  border-radius: 4px;
 }
 
-.signupbtn:hover{
-background-color:#23cc75;
-transition: 1000ms;
+.signupbtn:hover {
+  background-color: #23cc75;
+  transition: 1000ms;
 }
 
-#account-create-title{
+#account-create-title {
   display: flex;
   justify-content: center;
   padding-bottom: 5%;
 }
 
-.create-acc-input{
+.create-acc-input {
   font-family: 'Space Mono', monospace;
   color: #cccccc;
   background-color: #323642;
-  border:none;
-  width:100%;
-  padding:2%;
+  border: none;
+  width: 100%;
+  padding: 2%;
   margin-bottom: 11px;
 }
 
-#form{
+#form {
   text-align: center;
   padding: 0 30px;
 }
 
-.tos{
-  padding-bottom:7px;
+.tos {
+  padding-bottom: 7px;
 }
 
-thead{
-  text-align:left;
+thead {
+  text-align: left;
   font-size: 18px;
 }
-th{
-  border-bottom:1px solid #cccccc;
+
+th {
+  border-bottom: 1px solid #cccccc;
 
 }
 
-table{
-  width:100%;
+table {
+  width: 100%;
 }
 
-.auth-form{
+.auth-form {
   position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0,0,0, 0.5);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hide-form {
   display: none;
 }
 
-.trueLogin{
+.trueLogin {
   display: none;
 }
 
-.block-btns{
+.block-btns {
   display: flex;
+ 
 }
 
-.signup-btn-block{
-  border-color:#cccccc;
+.signup-btn-block {
+  border-color: #cccccc;
   background-color: #323642;
   color: #cccccc;
   font-family: 'Space Mono', monospace;
   font-size: 10px;
   padding: 8px 23px;
-  margin-left:8px;
+  margin-left: 8px;
+  border-radius: 4px;
 }
 
-.login-btn-block{
-  border-color:#cccccc;
+.login-btn-block {
+  border-color: #cccccc;
   background-color: #323642;
   color: #cccccc;
   font-family: 'Space Mono', monospace;
   font-size: 10px;
   padding: 8px 23px;
+  border-radius: 4px;
 
 }
 
+.apikeyentry {
+  font-family: 'Space Mono', monospace;
+  color: #cccccc;
+  background-color: #323642;
+  border: none;
+  width: 23%;
+  height: 22px;
+}
 
-@media (max-width: 600px) 
-{
-    #chart-contain
-    {
-        display: none;
-    }
+#updateapikeys {
+  color: #cccccc;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  background-color: #66926e;
+  font-size: 12px;
+  padding: 3px 17px;
+  border-radius: 4px;
+}
 
-    .auth-form{
-      position: absolute;
-      top: 0;
-      width: 150%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.5);
+#historyBtn {
+  color: #cccccc;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  background-color: #323642;
+  font-size: 12px;
+  padding: 3px 17px;
+  border-radius: 4px;
+}
+
+#deleteBtn {
+  color: #cccccc;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  background-color: #d12a2a;
+  font-size: 10px;
+  padding: 3px 0;
+  border-radius: 4px;
+
+
+}
+
+.historydelbtn {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+
+
+}
+
+.apikeyinputapi {
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  #chart-contain {
+    display: none;
+  }
+
+  .auth-form {
+    position: absolute;
+    top: 0;
+    width: 150%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .hide-form {
     display: none;
   }
 
-  .inputStyling{
+  .inputStyling {
     font-family: 'Space Mono', monospace;
     color: #cccccc;
     background-color: #323642;
@@ -380,11 +444,11 @@ table{
     right: 85px;
     top: 280px;
     display: none;
-}
+  }
 
-.visible {
-  display: inline-block;
-}
+  .visible {
+    display: inline-block;
+  }
 
   .register {
     display: flex;
@@ -397,21 +461,35 @@ table{
     margin: 158px auto 0 auto;
     padding-top: 2%;
     padding-bottom: 2%;
-    width:100%;
-}
-
-#signupbtn {
-  color: #cccccc;
-  border: none;
-  font-family: 'Space Mono', monospace;
-  background-color: #66926e;
-  font-size: 12px;
-  padding: 15px 25px;
-  width: 100%;
-
-    }
-
-    #xmrdeposit{
-      word-wrap: break-word;
-    }
+    width: 100%;
   }
+
+  #signupbtn {
+    color: #cccccc;
+    border: none;
+    font-family: 'Space Mono', monospace;
+    background-color: #66926e;
+    font-size: 12px;
+    padding: 15px 25px;
+    width: 100%;
+
+  }
+
+  #xmrdeposit {
+    word-wrap: break-word;
+  }
+
+  .apikeyinputapi {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .apikeyentry {
+    font-family: 'Space Mono', monospace;
+    color: #cccccc;
+    background-color: #323642;
+    border: none;
+    width: 45%;
+    margin-bottom: 5px;
+  }
+}

@@ -6,33 +6,36 @@
   <h1>Profile</h1>
 </div>
 
+<div class="apikeyinputapi">
 
 <form id="form" action="/profile" method="POST">
-    <label for="pubKey">Public Api Key:</label>
-    <input type="text" name="pubKey"
+    <label  for="pubKey">Public Api Key:</label>
+    <input class="apikeyentry" type="text" name="pubKey"
       placeholder="Public Api Key">
 
     <label for="priKey">Secret Api Key:</label>
-    <input type="text" name="priKey" placeholder="Secret Api Key">
+    <input class="apikeyentry" type="text" name="priKey" placeholder="Secret Api Key">
   
-
-
-     <input type="submit" name="submit">
+     <input type="submit" name="submit" value="Update" id="updateapikeys">
   </form>
-
-<div>
-
-<button type="submit" name="submit" id="historyBtn"> History </button>
 
 </div>
 
 
+<div class="historydelbtn">
+<div>
+<button type="submit" name="submit" id="historyBtn"> History </button>
+</div>
+
 <div>
 <form action="/deleteaccount" method="POST">
-
-<button id="deleteBtn">Delete Account </button>
-
+<div> 
+  <button id="deleteBtn">Delete Account </button>
+</div>
 </form>
+</div>
+
+
 </div>
 
 

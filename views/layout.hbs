@@ -21,30 +21,54 @@
 
 {{#if currentUser}}
             <li>
-                <a href="/profile" class="nav-links loggedIn trueLogin">Profile</a>
-            </li>
-{{/if}}
-            <li>
                 <a href="/trading" class="nav-links">ETH/BTC</a>
             </li>
+
             <li>
                 <a href="/xmr" class="nav-links">XMR/BTC</a>
             </li>
-{{#unless currentUser}}
+
             <li>
-                <a onclick="toggleDropdown()" class="nav-links">login</a>
+                <a id="profileID" href="/profile" class="nav-links loggedIn">Profile</a>
             </li>
-{{/unless}}
-{{#if currentUser}}
+
+            <li>
+                <a id="logoutelement" href="/logout" class="nav-links loggin">logout</a>
+            </li>
+
              <li>
+                <a id="loginID" onclick="toggleDropdown()" class="nav-links trueLogin" >login</a>
+            </li>
+            <li>
+                <a id="registerID" href="/signup" class="nav-links trueLogin">register</a>
+            </li>
+
+           
+{{else}}
+            <li>
+                <a id="profileID" href="/profile" class="nav-links loggedIn trueLogin">Profile</a>
+            </li>
+
+            <li>
+                <a href="/trading" class="nav-links">ETH/BTC</a>
+            </li>
+
+            <li>
+                <a href="/xmr" class="nav-links">XMR/BTC</a>
+            </li>
+
+             <li>
+                <a id="loginID" onclick="toggleDropdown()" class="nav-links">login</a>
+            </li>
+            <li>
+                <a id="registerID" href="/signup" class="nav-links">register</a>
+            </li>
+            <li>
                 <a id="logoutelement" href="/logout" class="nav-links loggin trueLogin">logout</a>
             </li>
 {{/if}}
-{{#unless currentUser}}
-             <li>
-                <a href="/signup" class="nav-links">register</a>
-            </li>
-{{/unless}}
+
+
 
 
         </ul>

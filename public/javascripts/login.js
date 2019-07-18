@@ -17,8 +17,13 @@ document.getElementById('loginapp').onsubmit = function(e){
   }).then(()=>{
 
     console.log('test');
-    $(".loggedIn").removeClass('trueLogin');
-    $(".loggin").removeClass('trueLogin');
+
+    $('#loginID').toggleClass('trueLogin');
+    $('#registerID').toggleClass('trueLogin');
+    $("#profileID").toggleClass('trueLogin');
+    $('#logoutelement').toggleClass('trueLogin');
+    // $(".loggedIn").removeClass('trueLogin');
+    // $(".loggin").removeClass('trueLogin');
 
 
       const form = document.getElementById('auth-form');
