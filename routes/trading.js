@@ -173,23 +173,24 @@ let polo = new Poloniex(theUser.apikey,x,nonce=38);
 
 let info = {
   rate:req.body.rate ,
-  amount:req.body.amountEth ,
+  amount:req.body.amount,
 }
 
 return polo.buy('BTC_ETH', info.rate, info.amount)
 
 }).then((results)=>{
 
-  console.log(results)
   res.json(results)
 
 }).catch((error)=>{
-  console.log(error)
+
+  res.json({message:"You mad a Bad Request, please check your parameters BUY"})
 })
 
 })
 
 router.post('/trading/ethbtcselling',(req,res,next)=>{
+ 
   User.findById(req.user._id).then(theUser=> {
 
     let sKey = encryptor.decrypt(theUser.secretKey);
@@ -200,21 +201,22 @@ let polo = new Poloniex(theUser.apikey,x,nonce=38);
 
 let info = {
   rate:req.body.rate ,
-  amount:req.body.amountEth ,
+  amount:req.body.amount,
 }
 
-return polo.sell('BTC_ETH', info.rate, info.amount)
+ return polo.sell('BTC_ETH', info.rate, info.amount)
 
 }).then((results)=>{
 
-  console.log(results)
   res.json(results)
 
-}).catch((error)=>{
-  console.log(error)
+  }).catch((error)=>{
+  //Here is the handled error
+  res.json({message:"You mad a Bad Request, please check your parameters SELL"})
 })
 
 })
+
 
 
 
@@ -237,6 +239,67 @@ router.get('/trading/tickerxmr',(req,res,next)=>{
     })
   
   })
+
+//Buy XMR
+
+router.post('/trading/xmrbuy',(req,res,next)=>{
+  User.findById(req.user._id).then(theUser=> {
+
+    let sKey = encryptor.decrypt(theUser.secretKey);
+
+    let x = sKey.toString()
+  
+let polo = new Poloniex(theUser.apikey,x,nonce=38);
+
+let buying = {
+  rate:req.body.rate ,
+  amount:req.body.amount,
+}
+
+return polo.buy('BTC_XMR', buying.rate, buying.amount)
+
+}).then((results)=>{
+
+  res.json(results)
+
+}).catch((error)=>{
+
+  res.json({message:"You mad a Bad Request, please check your parameters BUY"})
+})
+
+})
+
+
+//Selling XMR
+
+router.post('/trading/xmrselling',(req,res,next)=>{
+ 
+  User.findById(req.user._id).then(theUser=> {
+
+    let sKey = encryptor.decrypt(theUser.secretKey);
+
+    let x = sKey.toString()
+  
+let polo = new Poloniex(theUser.apikey,x,nonce=38);
+
+let selling = {
+  rate:req.body.rate ,
+  amount:req.body.amount,
+}
+
+ return polo.sell('BTC_XMR', selling.rate, selling.amount)
+
+}).then((results)=>{
+
+  res.json(results)
+
+  }).catch((error)=>{
+  //Here is the handled error
+  res.json({message:"You mad a Bad Request, please check your parameters SELL"})
+})
+
+})
+
 
 
 

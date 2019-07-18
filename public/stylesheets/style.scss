@@ -339,3 +339,79 @@ table{
   padding: 8px 23px;
 
 }
+
+
+@media (max-width: 600px) 
+{
+    #chart-contain
+    {
+        display: none;
+    }
+
+    .auth-form{
+      position: absolute;
+      top: 0;
+      width: 150%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .hide-form {
+    display: none;
+  }
+
+  .inputStyling{
+    font-family: 'Space Mono', monospace;
+    color: #cccccc;
+    background-color: #323642;
+    padding: 4%;
+    border: none;
+    width: 118%;
+  }
+
+  .dropdown {
+    background-color: #000000;
+    border: 1px solid #cccccc;
+    padding: 5% 11% 7% 5%;
+    position: absolute;
+    right: 85px;
+    top: 280px;
+    display: none;
+}
+
+.visible {
+  display: inline-block;
+}
+
+  .register {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10%;
+    border: 1px solid #cccccc;
+    padding: 6% 0% 5% -0.5%;
+    margin: 158px auto 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width:100%;
+}
+
+#signupbtn {
+  color: #cccccc;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  background-color: #66926e;
+  font-size: 12px;
+  padding: 15px 25px;
+  width: 100%;
+
+    }
+
+    #xmrdeposit{
+      word-wrap: break-word;
+    }
+  }

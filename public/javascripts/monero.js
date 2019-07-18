@@ -68,12 +68,68 @@ window.onload = function(){
 
 
 
-
-    
-
 //load the chart 
 let chart = new cryptowatch.Embed('poloniex', 'xmrbtc')
 
 chart.mount('#chart-contain');
+
+
+//Buy ETH
+document.getElementById('xmrbuybtn').onclick =function(e){
+  e.preventDefault();
+    let amountxmr = document.getElementById('amountxmr');
+    
+    let ratexmr = document.getElementById('ratexmr');
+  
+    axios.post('http://localhost:4000/trading/xmrbuy',{
+  
+  
+    amount:amountxmr.value,
+    rate: ratexmr.value,
+  
+  
+    }).then((results)=>{
+  
+  console.log(results);
+  
+      ratexmr.value = '';
+      amountxmr.value = '';
+  
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }
+
+
+
+  //Sell ETH
+  document.getElementById('xmrsellbtn').onclick =function(e){
+    e.preventDefault();
+
+
+    let ratex = document.getElementById('ratexmrselling');
+      let amountx = document.getElementById('amountxmrselling');
+    
+      axios.post('http://localhost:4000/trading/ethbtcselling',{
+    
+    
+      amount:amountx.value,
+      rate: ratex.value,
+    
+    
+      }).then((results)=>{
+    
+    console.log(results);
+    
+        ratex.value = '';
+        amountx.value = '';
+    
+      }).catch((err)=>{
+        console.log(err)
+      })
+    }
+    
+    
+          
 
 }//end

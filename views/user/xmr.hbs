@@ -1,3 +1,5 @@
+
+
 <h1>XMR/BTC</h1>
 
    
@@ -28,6 +30,8 @@
 
 
 <div class= "main-charts">
+
+  
   <div id="chart-contain">
      
   </div>
@@ -36,23 +40,23 @@
 
   <div>
     <h2 class="buy-selltitle">Buy Monero</h2>
-    <form id="xmrbuy" action='/trading/xmrbtcbuy' method='POST'>
-    <input type="number" name="rate" id="rateeth" class='buy-sellinput' placeholder="rate">
+    <form id="xmrbuy" action='/trading/xmrbuy' method='POST'>
+    <input type="number" name="rate" id="ratexmr" class='buy-sellinput' placeholder="rate">
     <br><br>
-    <input type="number" name="amountEth" id="amountEth" class='buy-sellinput' placeholder="amount">
+    <input type="number" name="amount" id="amountxmr" class='buy-sellinput' placeholder="amount">
     <br><br>
-    <button class="buy-btn">Buy XMR</button>
+    <button id="xmrbuybtn" class="buy-btn">Buy XMR</button>
     </form>
   </div>
 
   <div class='sellbox'>
     <h2 class="buy-selltitle">Sell Monero</h2>
-    <form id="ethsell" action='/trading/ethbtcselling' method='POST'>
-    <input type="number" name="rate" id="rateeth" class='buy-sellinput' placeholder="rate">
+    <form id="ethsell" action='/trading/xmrselling' method='POST'>
+    <input type="number" name="rate" id="ratexmrselling" class='buy-sellinput' placeholder="rate">
     <br><br>
-    <input type="number" name="amountEth" id="amountEth" class='buy-sellinput' placeholder="amount">
+    <input type="number" name="amountEth" id="amountxmrselling" class='buy-sellinput' placeholder="amount">
     <br><br>
-    <a><button class="sell-btn">Sell XMR</button></a>
+    <a><button id="xmrsellbtn" class="sell-btn">Sell XMR</button></a>
     </form>
   </div>
   {{#unless currentUser}}
@@ -76,5 +80,4 @@
 </div>
 </div>
 
-  {{!-- <script src="/javascripts/moneroLogin.js"></script> --}}
   <script src="/javascripts/monero.js"></script>

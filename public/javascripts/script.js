@@ -76,8 +76,56 @@ window.onload = function(){
     })
 
 
+    //Sell ETH
+document.getElementById('sellethbtn').onclick =function(e){
+e.preventDefault();
+  let amountx = document.getElementById('amountEthsell');
+  let ratex = document.getElementById('rateethsell');
+
+  axios.post('http://localhost:4000/trading/ethbtcselling',{
 
 
+  amount:amountx.value,
+  rate: ratex.value,
+
+
+  }).then((results)=>{
+
+console.log(results);
+
+    ratex.value = '';
+    amountx.value = '';
+
+  }).catch((err)=>{
+    console.log(err)
+  })
+}
+
+
+//Buy ETH
+document.getElementById('buyethbtn').onclick =function(e){
+  e.preventDefault();
+    let amountb = document.getElementById('amountEth');
+    let rateb = document.getElementById('rateeth');
+  
+    axios.post('http://localhost:4000/trading/ethbtcbuy',{
+  
+  
+    amount:amountb.value,
+    rate: rateb.value,
+  
+  
+    }).then((results)=>{
+  
+  console.log(results);
+  
+      rateb.value = '';
+      amountb.value = '';
+  
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }
       
 
 //load the chart 

@@ -15,24 +15,19 @@ document.getElementById('loginapp').onsubmit = function(e){
     password: pass.value,
 
   }).then(()=>{
-      const form = document.getElementById('auth-form');
-      // const loginTrue = document.getElementsByClassName("loggedIn");
-      // const loggedOut = document.getElementsByClassName('loggedOut');
 
+    console.log('test');
+    $(".loggedIn").removeClass('trueLogin');
+    $(".loggin").removeClass('trueLogin');
+
+
+      const form = document.getElementById('auth-form');
+     
       if(!form.classList.contains('hide-form')) {
         form.classList.add('hide-form')
       }
 
-      //Doesnt Work
-    //   for(let i =0; i < loginTrue.length; i++){
-    //     for(let z = 0; z < loggedOut.length; z++){
-    //  if(loginTrue[i].classList.contains('trueLogin')){
-    //     loginTrue[i].classList.remove('trueLogin')
-    //     loggedOut[z].classList.add('trueLogin');
-    //  }
-    // }
-    //     console.log('inefie')
-    //  }
+    
      
       
       //Get the deposit address
@@ -104,8 +99,8 @@ document.getElementById('signup-block').onsubmit = () => {
 }
 
 //logout
-document.getElementById('logoutelement').onclick = function(){
+// document.getElementById('logoutelement').onclick = function(){
 
-  axios.post('http://localhost:4000/logout')
+//   axios.post('http://localhost:4000/logout')
 
-}
+// }

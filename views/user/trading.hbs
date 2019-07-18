@@ -43,20 +43,21 @@
     <br><br>
     <input type="number" name="amountEth" id="amountEth" class='buy-sellinput' placeholder="amount">
     <br><br>
-    <button class="buy-btn">Buy ETH</button>
+    <button id="buyethbtn" class="buy-btn">Buy ETH</button>
     </form>
   </div>
 
   <div class='sellbox'>
     <h2 class="buy-selltitle">Sell Ethereum</h2>
     <form id="ethsell" action='/trading/ethbtcselling' method='POST'>
-    <input type="number" name="rate" id="rateeth" class='buy-sellinput' placeholder="rate">
+    <input type="number" name="rate" id="rateethsell" class='buy-sellinput' placeholder="rate">
     <br><br>
-    <input type="number" name="amountEth" id="amountEth" class='buy-sellinput' placeholder="amount">
+    <input type="number" name="amountEth" id="amountEthsell" class='buy-sellinput' placeholder="amount">
     <br><br>
-    <a><button class="sell-btn">Sell ETH</button></a>
+    <a><button id= "sellethbtn" class="sell-btn">Sell ETH</button></a>
     </form>
   </div>
+
   {{#unless currentUser}}
     <div class="auth-form" id="auth-form">
       <div class="block-btns">
