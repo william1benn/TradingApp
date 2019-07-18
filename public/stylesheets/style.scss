@@ -407,6 +407,24 @@ table {
   border-radius: 4px;
 }
 
+.opens{
+  display: flex;
+  justify-content: center;
+}
+
+#openOrders{
+  font-size: 14px;
+}
+
+#opens-title{
+  display: flex;
+  justify-content: center;
+}
+
+.line-break{
+border-bottom: #cccccc 1px solid;
+}
+
 @media (max-width: 600px) {
   #chart-contain {
     display: none;

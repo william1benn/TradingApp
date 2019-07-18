@@ -3,8 +3,10 @@
 
 
 <div>
-  <h1>Profile</h1>
+  <h1>Profile {{currentUser.username}}</h1>
 </div>
+
+
 
 <div class="apikeyinputapi">
 
@@ -37,7 +39,14 @@
 
 
 </div>
+<h3 id="opens-title">Open Orders:</h3>
+<div class="opens">
 
+<div id="openOrders">
+  
+
+</div>
+</div>
 
 
 <div>
@@ -45,7 +54,6 @@
   <thead>
     <th>Amount</th>
     <th>Date</th> 
-    <th>Order Number</th>
     <th>Type</th>
     <th>TradeID</th>
   </thead>

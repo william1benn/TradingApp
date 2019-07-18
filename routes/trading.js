@@ -119,7 +119,7 @@ router.get('/trading',(req,res,next)=>{
     
   let polo = new Poloniex(theUser.apikey,x,nonce=38);
 
-   const BTChistory = polo.returnTradeHistory("BTC_ETH").then((history)=>{
+   const BTChistory = polo.returnMyTradeHistory("BTC_ETH").then((history)=>{
 
     upHistory = history.slice(0,30)
 
@@ -301,7 +301,30 @@ let selling = {
 })
 
 
+//return Open Orders
+router.get('/trading/openOrders',(req,res,next)=>{
+ 
+  User.findById(req.user._id).then(theUser=> {
 
+    let sKey = encryptor.decrypt(theUser.secretKey);
+
+    let x = sKey.toString()
+  
+let polo = new Poloniex(theUser.apikey,x,nonce=38);
+
+
+ return polo.returnOpenOrders('BTC_ETH')
+
+}).then((results)=>{
+
+  res.json(results)
+
+  }).catch((error)=>{
+
+  res.json({message:"You mad a Bad Request, please check your parameters SELL"})
+})
+
+})
 
 
 module.exports = router;
