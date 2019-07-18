@@ -1,19 +1,18 @@
 const express = require('express');
-const router  = express.Router();
-const User  = require("../models/User");
-const passport   = require("passport");
-const session    = require("express-session");
+const router = express.Router();
+const User = require("../models/User");
+const passport = require("passport");
+const session = require("express-session");
 const cryptowatch = require('cryptowatch')
 const ensureLogin = require("connect-ensure-login");
 let encryptor = require('simple-encryptor')('imaginethatiwentandgotit');
 
-
 // BCrypt to encrypt passwords
-const bcrypt         = require("bcryptjs");
-const bcryptSalt     = 10;
+const bcrypt = require("bcryptjs");
+const bcryptSalt = 10;
 
-router.get('/signup',(req,res,next)=>{
-  
+router.get('/signup', (req, res, next) => {
+
   res.render('auth/signup');
 })
 
@@ -23,50 +22,48 @@ router.post("/signup", (req, res, next) => {
   const pubKey = req.body.pubKey;
   const priKey = req.body.priKey;
 
-console.log(username,password, '----------------------------------------')
-
-  if(username ==='' || password===''){
+  if (username === '' || password === '') {
     console.log("you need to enter a username and password");
     res.redirect('/signup')
-    return 
-  }else{
+    return
+  } else {
 
-console.log("We are in the else fool")
+    let encrypted = encryptor.encrypt(priKey);
 
-  let encrypted = encryptor.encrypt(priKey);
+    const salt = bcrypt.genSaltSync(bcryptSalt);
+    const hashPass = bcrypt.hashSync(password, salt);
 
-  const salt     = bcrypt.genSaltSync(bcryptSalt);
-  const hashPass = bcrypt.hashSync(password, salt);
- 
-User.findOne({ "username": username })
-.then(user => {
-  if (user !== null) {
-      res.redirect("/signup");
-      return;
-    }
- //--------
-
-console.log("Creating the user here hjkkjh")
-
- User.create({
-  username,
-  password: hashPass,
-  apikey:pubKey,
-  secretKey:encrypted,
-}).then((user) => {
-
-console.log("We gonna redirect.....maybe")
-
-  res.redirect("/")
+    User.findOne({
+        "username": username
+      })
+      .then(user => {
+        if (user !== null) {
+          res.redirect("/signup");
+          return;
+        }
+        //--------
 
 
-   
-}).catch(error => {
-  console.log(error);
-})
-  }).catch(err=>{
-    console.log(err)
-  });
+
+        User.create({
+          username,
+          password: hashPass,
+          apikey: pubKey,
+          secretKey: encrypted,
+        }).then((user) => {
+
+
+
+          res.redirect("/")
+
+
+
+        }).catch(error => {
+          console.log(error);
+        })
+      }).catch(err => {
+        console.log(err)
+      });
   }
 });
 
@@ -83,7 +80,7 @@ router.post("/login", passport.authenticate("local", {
 
 
 //Logout PassPort Style
-router.get('/logout', (req, res, next)=>{
+router.get('/logout', (req, res, next) => {
   req.flash('success', "You Have Been Logged Out");
 
   req.logout();
@@ -93,9 +90,9 @@ router.get('/logout', (req, res, next)=>{
 
 
 
-router.get('/profile',ensureLogin.ensureLoggedIn("/trading"),(req,res,next)=>{
-  
-res.render('user/profile');
+router.get('/profile', ensureLogin.ensureLoggedIn("/trading"), (req, res, next) => {
+
+  res.render('user/profile');
 
 })
 
@@ -103,39 +100,39 @@ res.render('user/profile');
 //---
 
 //Update Api Key
-router.post('/profile', (req, res, next)=>{
+router.post('/profile', (req, res, next) => {
   const pubKey = req.body.pubKey;
   const priKey = req.body.priKey;
 
-  if(pubKey ==='' || priKey===''){
+  if (pubKey === '' || priKey === '') {
     console.log("you need to enter a key");
     res.redirect('/profile')
-  }else{
-  let encrypted = encryptor.encrypt(priKey);
-  
-  User.findByIdAndUpdate(req.user._id,{
+  } else {
+    let encrypted = encryptor.encrypt(priKey);
 
-    apikey:pubKey,
-    secretKey:encrypted,
+    User.findByIdAndUpdate(req.user._id, {
 
-  }).then((callback)=>{
-    req.flash('success', "Post Was Successfully Updated");
+      apikey: pubKey,
+      secretKey: encrypted,
 
-    res.redirect('/profile')
-  
-}).catch((err)=>{
+    }).then((callback) => {
+      req.flash('success', "Post Was Successfully Updated");
 
-  console.log(err)
+      res.redirect('/profile')
+
+    }).catch((err) => {
+
+      console.log(err)
+
+    })
+
+  } //end of else in if
 
 })
 
-}//end of else in if
+router.post('/deleteaccount', (req, res, next) => {
+  User.findByIdAndDelete(req.user._id).then(() => {
 
-})
-
-router.post('/deleteaccount',(req,res,next)=>{
-  User.findByIdAndDelete(req.user._id).then(()=>{
-    
     res.redirect('/trading')
 
   })

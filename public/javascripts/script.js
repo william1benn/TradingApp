@@ -43,7 +43,7 @@ window.onload = function(){
               console.log(err);
           })
      
-  }, 10000 );
+  }, 4000 );
 
 
   //Get the deposit address

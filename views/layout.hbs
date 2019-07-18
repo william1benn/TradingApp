@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-  <script src= "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
-  
-  <nav class="navbar">
+
+    <nav class="navbar">
         <span class="navbar-toggle" id="js-navbar-toggle">
             <i class="fas fa-bars"></i>
         </span>
         <a href="/trading" class="logo">CryptoTrade</a>
         <ul class="main-nav" id="js-menu">
 
-{{#if currentUser}}
+            {{#if currentUser}}
             <li>
                 <a href="/trading" class="nav-links">ETH/BTC</a>
             </li>
@@ -33,18 +35,18 @@
             </li>
 
             <li>
-                <a id="logoutelement" href="/logout" class="nav-links loggin">logout</a>
+                <a id="logoutelement" href="/logout" class="nav-links loggin">Logout</a>
             </li>
 
-             <li>
-                <a id="loginID" onclick="toggleDropdown()" class="nav-links trueLogin" >login</a>
+            <li>
+                <a id="loginID" onclick="toggleDropdown()" class="nav-links trueLogin">Login</a>
             </li>
             <li>
-                <a id="registerID" href="/signup" class="nav-links trueLogin">register</a>
+                <a id="registerID" href="/signup" class="nav-links trueLogin">Register</a>
             </li>
 
-           
-{{else}}
+
+            {{else}}
             <li>
                 <a id="profileID" href="/profile" class="nav-links loggedIn trueLogin">Profile</a>
             </li>
@@ -57,16 +59,16 @@
                 <a href="/xmr" class="nav-links">XMR/BTC</a>
             </li>
 
-             <li>
-                <a id="loginID" onclick="toggleDropdown()" class="nav-links">login</a>
+            <li>
+                <a id="loginID" onclick="toggleDropdown()" class="nav-links">Login</a>
             </li>
             <li>
-                <a id="registerID" href="/signup" class="nav-links">register</a>
+                <a id="registerID" href="/signup" class="nav-links">Register</a>
             </li>
             <li>
-                <a id="logoutelement" href="/logout" class="nav-links loggin trueLogin">logout</a>
+                <a id="logoutelement" href="/logout" class="nav-links loggin trueLogin">Logout</a>
             </li>
-{{/if}}
+            {{/if}}
 
 
 
@@ -75,25 +77,26 @@
     </nav>
 
 
-  {{{body}}}
+    {{{body}}}
 
-  <div class="dropdown" id="dropdown">
-    <form class="login-form" id='loginapp'> 
-    <input class = "inputStyling" type="text" name="username" placeholder="Username" id="name">
-     <br>
-    <input class = "inputStyling" type="password" name="password" placeholder="Password" id= "password">
-    <br>
-    <button id="loginBtn">Login</button>
-      </form>
-  </div>
+    <div class="dropdown" id="dropdown">
+        <form class="login-form" id='loginapp'>
+            <input class="inputStyling" type="text" name="username" placeholder="Username" id="name">
+            <br>
+            <input class="inputStyling" type="password" name="password" placeholder="Password" id="password">
+            <br>
+            <button id="loginBtn">Login</button>
+        </form>
+    </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-  <script type="text/javascript" src="https://static.cryptowat.ch/assets/scripts/embed.bundle.js"></script>
-   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
- <script type="text/javascript" src="javascripts/login.js"></script>
-  <script type="text/javascript" src="javascripts/dropdown.js"></script>
-   <script type= "text/javascript" src="javascripts/features.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script type="text/javascript" src="https://static.cryptowat.ch/assets/scripts/embed.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/login.js"></script>
+    <script type="text/javascript" src="javascripts/dropdown.js"></script>
+    <script type="text/javascript" src="javascripts/features.js"></script>
 
 
 </body>
+
 </html>
