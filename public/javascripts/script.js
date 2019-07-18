@@ -1,7 +1,7 @@
 window.onload = function(){
 
 
-    axios.get('http://localhost:4000/trading/accounts')
+    axios.get('/trading/accounts')
     .then((results)=>{
   
       let bdiv = document.getElementById('btc');
@@ -24,7 +24,7 @@ window.onload = function(){
 
     setInterval(() => {
 
-      axios.get('http://localhost:4000/trading/ticker')
+      axios.get('/trading/ticker')
       .then((results)=>{
         console.log(results)
         document.getElementById('usdbtc').innerText = results.data.price;
@@ -34,7 +34,7 @@ window.onload = function(){
       console.log(err);
       })
       
-        axios.get('http://localhost:4000/trading/tickereth')
+        axios.get('/trading/tickereth')
       .then((results)=>{
         console.log(results)
         document.getElementById('usdeth').innerText = results.data.price;
@@ -48,7 +48,7 @@ window.onload = function(){
 
   //Get the deposit address
   
-    axios.get('http://localhost:4000/trading/deposit')
+    axios.get('/trading/deposit')
     .then((results)=>{
 
       let bdiv = document.getElementById('deposit');
@@ -82,7 +82,7 @@ e.preventDefault();
   let amountx = document.getElementById('amountEthsell');
   let ratex = document.getElementById('rateethsell');
 
-  axios.post('http://localhost:4000/trading/ethbtcselling',{
+  axios.post('/trading/ethbtcselling',{
 
 
   amount:amountx.value,
@@ -108,7 +108,7 @@ document.getElementById('buyethbtn').onclick =function(e){
     let amountb = document.getElementById('amountEth');
     let rateb = document.getElementById('rateeth');
   
-    axios.post('http://localhost:4000/trading/ethbtcbuy',{
+    axios.post('/trading/ethbtcbuy',{
   
   
     amount:amountb.value,

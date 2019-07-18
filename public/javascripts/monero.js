@@ -2,7 +2,7 @@ window.onload = function(){
 
   //Gets Balance of accounts
 
-  axios.get('http://localhost:4000/trading/accounts')
+  axios.get('/trading/accounts')
   .then((results)=>{
 
     let abdiv = document.getElementById('btc');
@@ -25,7 +25,7 @@ window.onload = function(){
 
   setInterval(() => {
 
-    axios.get('http://localhost:4000/trading/ticker')
+    axios.get('/trading/ticker')
     .then((results)=>{
       console.log(results)
       document.getElementById('usdbtc').innerText = results.data.price;
@@ -35,7 +35,7 @@ window.onload = function(){
     console.log(err);
     })
     
-      axios.get('http://localhost:4000/trading/tickerxmr')
+      axios.get('/trading/tickerxmr')
     .then((results)=>{
     
       document.getElementById('usdxmr').innerText = results.data.price;
@@ -49,7 +49,7 @@ window.onload = function(){
 
 //Get the deposit address
 
-  axios.get('http://localhost:4000/trading/deposit')
+  axios.get('/trading/deposit')
   .then((results)=>{
 
     let bdiv = document.getElementById('deposit');
@@ -81,7 +81,7 @@ document.getElementById('xmrbuybtn').onclick =function(e){
     
     let ratexmr = document.getElementById('ratexmr');
   
-    axios.post('http://localhost:4000/trading/xmrbuy',{
+    axios.post('/trading/xmrbuy',{
   
   
     amount:amountxmr.value,
@@ -110,7 +110,7 @@ document.getElementById('xmrbuybtn').onclick =function(e){
     let ratex = document.getElementById('ratexmrselling');
       let amountx = document.getElementById('amountxmrselling');
     
-      axios.post('http://localhost:4000/trading/ethbtcselling',{
+      axios.post('/trading/ethbtcselling',{
     
     
       amount:amountx.value,

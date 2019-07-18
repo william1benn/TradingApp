@@ -3,13 +3,13 @@ window.onload = function(){
 //Load Crypto Trade History
 document.getElementById('historyBtn').onclick = ()=>{
   
-  axios.get('http://localhost:4000/trading/history/btc',(req,res,next)=>{
+  axios.get('/trading/history/btc',(req,res,next)=>{
 
     console.log("updated")
 
   }).then((callback)=>{
 
-    axios.get('http://localhost:4000/trading/history/btceth')
+    axios.get('/trading/history/btceth')
     .then((results)=>{
       
       document.getElementById('tableHistory').innerHTML =" ";

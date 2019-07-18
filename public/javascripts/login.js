@@ -37,7 +37,7 @@ document.getElementById('loginapp').onsubmit = function(e){
       
       //Get the deposit address
   
-      axios.get('http://localhost:4000/trading/deposit')
+      axios.get('/trading/deposit')
       .then((results)=>{
 
        let bdiv = document.getElementById('deposit');
@@ -62,7 +62,7 @@ document.getElementById('loginapp').onsubmit = function(e){
          
 
       }).then(()=>{
-        axios.get('http://localhost:4000/trading/accounts')
+        axios.get('/trading/accounts')
         .then((results)=>{
       
           if(window.location.pathname === '/xmr'){
@@ -100,12 +100,6 @@ document.getElementById('loginapp').onsubmit = function(e){
 }
 
 document.getElementById('signup-block').onsubmit = () => {
-  axios.get('http://localhost:4000/signup')
+  axios.get('/signup')
 }
 
-//logout
-// document.getElementById('logoutelement').onclick = function(){
-
-//   axios.post('http://localhost:4000/logout')
-
-// }
