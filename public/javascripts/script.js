@@ -5,10 +5,8 @@
 window.onload = function(){
   
   
-    swal("Welcome to CryptoTrade ", " This proof of concept crypto trading website allows you enter your apikeys from Poloniex and place actual trades. This is a fully functional trading website.");
+    swal("Welcome to CryptoTrade ", " This proof of concept cryptocurrency trading website allows you to enter apikeys from Poloniex and place actual trades. This is a fully functional cryptocurrency trading website.");
   
-  
-
 
     axios.get('/trading/accounts')
     .then((results)=>{

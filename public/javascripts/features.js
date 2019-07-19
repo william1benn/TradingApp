@@ -1,7 +1,4 @@
 
-$(document).ready(function(){
-  $('#main-page-title').modal();
-})
 
 
 $("#loginblock").click( function() {
