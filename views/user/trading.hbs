@@ -1,6 +1,7 @@
 
 <h1>ETH/BTC</h1>
 
+
    
 <div class="ticker">
 <label>Bitcoin Price:$</label><span id="usdbtc"></span>
@@ -38,7 +39,7 @@
 
   <div>
     <h2 class="buy-selltitle">Buy Ethereum</h2>
-    <form id="ethbuy" action='/trading/ethbtcbuy' method='POST'>
+    <form id="ethbuy">
     <input type="number" name="rate" id="rateeth" class='buy-sellinput' placeholder="Rate">
     <br><br>
     <input type="number" name="amountEth" id="amountEth" class='buy-sellinput' placeholder="Amount">
@@ -47,14 +48,9 @@
     </form>
   </div>
 
-<div>
-<h5 id="msg"></h5>
-</div>
-
-
   <div class='sellbox'>
     <h2 class="buy-selltitle">Sell Ethereum</h2>
-    <form id="ethsell" action='/trading/ethbtcselling' method='POST'>
+    <form id="ethsell">
     <input type="number" name="rate" id="rateethsell" class='buy-sellinput' placeholder="Rate">
     <br><br>
     <input type="number" name="amountEth" id="amountEthsell" class='buy-sellinput' placeholder="Amount">
@@ -84,5 +80,6 @@
 </div>
 </div>
   <script src="/javascripts/script.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 

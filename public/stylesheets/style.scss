@@ -287,6 +287,7 @@ form.login-form {
 #form {
   text-align: center;
   padding: 0 30px;
+  width: 70%;
 }
 
 .tos {
@@ -438,6 +439,11 @@ table {
   color:#e85e4f;
 }
 
+.swal-modal {
+  background-color: rgba(83, 153, 98, 0.69);
+  border: 4px solid white;
+}
+
 
 
 
@@ -528,5 +534,9 @@ table {
     width: 45%;
     margin-bottom: 5px;
   }
-
+#form{
+  text-align: center;
+  padding: 0 30px;
+  width: 100%;
+}
   }

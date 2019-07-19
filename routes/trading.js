@@ -6,6 +6,7 @@ const Poloniex   = require('poloniex-api-node');
 const CoinbasePro = require('coinbase-pro');
 const cryptowatch = require('cryptowatch')
 const encryptor = require('simple-encryptor')('imaginethatiwentandgotit');
+const alerts = require("sweetalert");
 
 //const coinPro = new CoinbasePro.PublicClient();
 
@@ -45,6 +46,8 @@ router.get('/trading/tickereth',(req,res,next)=>{
 
 //LOAD THE TRADING PAGE
 router.get('/',(req,res,next)=>{
+
+
 
 res.render('user/trading');
 })
@@ -183,15 +186,16 @@ return polo.buy('BTC_ETH', info.rate, info.amount)
   res.json(results)
 
 }).catch((error)=>{
-
-  res.json({message:"You mad a Bad Request, please check your parameters BUY"})
+console.log(error)
+ // res.json({message:"You mad a Bad Request, please check your parameters BUY"})
 })
 
 })
 
 router.post('/trading/ethbtcselling',(req,res,next)=>{
- 
-  User.findById(req.user._id).then(theUser=> {
+console.log(req.body)
+
+User.findById(req.user._id).then(theUser=> {
 
     let sKey = encryptor.decrypt(theUser.secretKey);
 
@@ -200,7 +204,7 @@ router.post('/trading/ethbtcselling',(req,res,next)=>{
 let polo = new Poloniex(theUser.apikey,x,nonce=38);
 
 let info = {
-  rate:req.body.rate ,
+  rate:req.body.rate,
   amount:req.body.amount,
 }
 
@@ -212,7 +216,9 @@ let info = {
 
   }).catch((error)=>{
   //Here is the handled error
-  res.json({message:"You mad a Bad Request, please check your parameters SELL"})
+
+  console.log(error)
+  //res.json({message:"You mad a Bad Request, please check your parameters SELL"})
 })
 
 })

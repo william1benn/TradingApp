@@ -44,6 +44,7 @@ router.post("/signup", (req, res, next) => {
         //--------
 
 
+
         User.create({
           username,
           password: hashPass,
@@ -68,6 +69,7 @@ router.post("/signup", (req, res, next) => {
 
 
 //login Passport Style
+
 
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/trading",
@@ -94,21 +96,17 @@ router.get('/profile', ensureLogin.ensureLoggedIn("/trading"), (req, res, next) 
 
 })
 
+
 //---
 
 //Update Api Key
 router.post('/profileUp', (req, res, next) => {
+  const pubKey = req.body.apikey;
+  const priKey = req.body.sKey;
 
+    let encrypted = encryptor.encrypt(priKey);
 
-  let pubKey = req.body.apikey;
-  let priKey = req.body.sKey;
-
-  console.log(pubKey);
-  console.log(priKey);
-
-  let encrypted = encryptor.encrypt(priKey);
-
-    User.findByIdAndUpdate(req.user._id,{
+    User.findByIdAndUpdate(req.user._id, {
 
       apikey: pubKey,
       secretKey: encrypted,
@@ -116,8 +114,12 @@ router.post('/profileUp', (req, res, next) => {
     }).then((callback) => {
       req.flash('success', "Post Was Successfully Updated");
 
+      res.redirect('/profile')
+
     }).catch((err) => {
+
       console.log(err)
+
     })
 
 })

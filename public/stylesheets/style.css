@@ -233,7 +233,8 @@ form.login-form {
 
 #form {
   text-align: center;
-  padding: 0 30px; }
+  padding: 0 30px;
+  width: 70%; }
 
 .tos {
   padding-bottom: 7px; }
@@ -355,6 +356,10 @@ table {
   font-size: 14px;
   color: #e85e4f; }
 
+.swal-modal {
+  background-color: rgba(83, 153, 98, 0.69);
+  border: 4px solid white; }
+
 @media (max-width: 600px) {
   #chart-contain {
     display: none; }
@@ -419,6 +424,10 @@ table {
     background-color: #323642;
     border: none;
     width: 45%;
-    margin-bottom: 5px; } }
+    margin-bottom: 5px; }
+  #form {
+    text-align: center;
+    padding: 0 30px;
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -16,6 +16,7 @@ const flash      = require("connect-flash");
 const passport   = require("passport");
 const LocalStrategy = require ("passport-local").Strategy;
 const User  = require("./models/User");
+const alerts = require("sweetalert");
 var encryptor = require('simple-encryptor');
 
 
