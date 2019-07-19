@@ -82,8 +82,13 @@ e.preventDefault();
   let amountx = document.getElementById('amountEthsell');
   let ratex = document.getElementById('rateethsell');
 
-  axios.post('/trading/ethbtcselling',{
+  if(amountx.value==='' || ratex.value==='' ){
 
+    let message = document.getElementById('msg');
+    message.innerText =' Please Check Input Fields';
+  }else{
+
+  axios.post('/trading/ethbtcselling',{
 
   amount:amountx.value,
   rate: ratex.value,
@@ -91,14 +96,20 @@ e.preventDefault();
 
   }).then((results)=>{
 
-console.log(results);
+      let message = document.getElementById('msg');
+      message.innerHTML =`${results.data.orderNumber}`
+      
 
     ratex.value = '';
     amountx.value = '';
 
   }).catch((err)=>{
-    console.log(err)
+
+    let message = document.getElementById('msg');
+    message.innerText = "Bad Request";
+  
   })
+}
 }
 
 
@@ -107,25 +118,36 @@ document.getElementById('buyethbtn').onclick =function(e){
   e.preventDefault();
     let amountb = document.getElementById('amountEth');
     let rateb = document.getElementById('rateeth');
+
+    if(amountb.value==='' || rateb.value==='' ){
+
+      let message = document.getElementById('msg');
+      message.innerText =' Please Check Input Fields';
+    }else{
   
     axios.post('/trading/ethbtcbuy',{
   
   
     amount:amountb.value,
     rate: rateb.value,
-  
+
   
     }).then((results)=>{
   
-  console.log(results);
+      let message = document.getElementById('msg');
+      message.innerHTML =`${results.data.orderNumber}`
   
       rateb.value = '';
       amountb.value = '';
   
     }).catch((err)=>{
-      console.log(err)
+
+      let message = document.getElementById('msg');
+      message.innerText = "Bad Request";
+
     })
   }
+}
       
 
 //load the chart 

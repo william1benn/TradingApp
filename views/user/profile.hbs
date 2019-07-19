@@ -10,15 +10,14 @@
 
 <div class="apikeyinputapi">
 
-<form id="form" action="/profile" method="POST">
-    <label  for="pubKey">Public Api Key:</label>
-    <input class="apikeyentry" type="text" name="pubKey"
-      placeholder="Public Api Key">
+<form id="form">
+    <label>Public Api Key:</label>
+    <input id="apiPublickey" class="apikeyentry" type="text"  placeholder="Public Api Key">
 
-    <label for="priKey">Secret Api Key:</label>
-    <input class="apikeyentry" type="text" name="priKey" placeholder="Secret Api Key">
+    <label>Secret Api Key:</label>
+    <input id="apiPrivatekey" class="apikeyentry" type="text" placeholder="Secret Api Key">
   
-     <input type="submit" name="submit" value="Update" id="updateapikeys">
+     <button id="updateapikeys">Submit</button>
   </form>
 
 </div>

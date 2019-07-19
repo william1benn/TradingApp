@@ -78,8 +78,14 @@ chart.mount('#chart-contain');
 document.getElementById('xmrbuybtn').onclick =function(e){
   e.preventDefault();
     let amountxmr = document.getElementById('amountxmr');
-    
     let ratexmr = document.getElementById('ratexmr');
+
+    if(amountxmr.value==='' || ratexmr.value==='' ){
+
+      let message = document.getElementById('msg');
+      message.innerText =' Please Check Input Fields'
+
+    }else{
   
     axios.post('/trading/xmrbuy',{
   
@@ -90,15 +96,18 @@ document.getElementById('xmrbuybtn').onclick =function(e){
   
     }).then((results)=>{
   
-  console.log(results);
-  
+      let message = document.getElementById('msg');
+      message.innerHTML =`${results.data.orderNumber}`
+      
       ratexmr.value = '';
       amountxmr.value = '';
   
     }).catch((err)=>{
-      console.log(err)
+      let message = document.getElementById('msg');
+      message.innerText = "Bad Request";
     })
   }
+}
 
 
 
@@ -109,6 +118,13 @@ document.getElementById('xmrbuybtn').onclick =function(e){
 
     let ratex = document.getElementById('ratexmrselling');
       let amountx = document.getElementById('amountxmrselling');
+
+      if(amountx.value==='' || ratex.value==='' ){
+
+        let message = document.getElementById('msg');
+        message.innerText =' Please Check Input Fields'
+
+      }else{
     
       axios.post('/trading/ethbtcselling',{
     
@@ -119,17 +135,20 @@ document.getElementById('xmrbuybtn').onclick =function(e){
     
       }).then((results)=>{
     
-    console.log(results);
+        let message = document.getElementById('msg');
+        message.innerHTML =`${results.data.orderNumber}`
+        
     
         ratex.value = '';
         amountx.value = '';
     
       }).catch((err)=>{
-        console.log(err)
+        let message = document.getElementById('msg');
+        message.innerText = "Bad Request";
       })
     }
     
-    
+  }
           
 
 }//end

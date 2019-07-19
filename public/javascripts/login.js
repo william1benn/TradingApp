@@ -3,20 +3,24 @@ let pass = document.getElementById('password');
 const loginBtn = document.getElementById("loginBtn");
 const dropdownEl = document.getElementById('dropdown');
 const blockbtnsign = document.querySelector('.signup-btn-block');
-
+let errorMessage = document.getElementById('message');
 
 //Login 
 
 document.getElementById('loginapp').onsubmit = function (e) {
   e.preventDefault();
+
+  if(userName.value === '' || pass.value ===''){
+
+    errorMessage.innerText = "Please check your input";
+  }else {
   axios.post('/login', {
 
     username: userName.value,
     password: pass.value,
 
-  }).then(() => {
 
-    console.log('test');
+  }).then((callb) => {
 
     $('#loginID').toggleClass('trueLogin');
     $('#registerID').toggleClass('trueLogin');
@@ -28,9 +32,6 @@ document.getElementById('loginapp').onsubmit = function (e) {
     if (!form.classList.contains('hide-form')) {
       form.classList.add('hide-form')
     }
-
-
-
 
     //Get the deposit address
 
@@ -94,6 +95,7 @@ document.getElementById('loginapp').onsubmit = function (e) {
   })
 
   dropdownEl.classList.remove('visible')
+}
 }
 
 document.getElementById('signup-block').onsubmit = () => {
