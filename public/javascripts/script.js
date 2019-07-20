@@ -2,11 +2,18 @@
 
 
 
+
+
 window.onload = function(){
-  
-  
-    swal("Welcome to CryptoTrade ", " This proof of concept cryptocurrency trading website allows you to enter apikeys from Poloniex and place actual trades. This is a fully functional cryptocurrency trading website.");
-  
+
+  //Show Modal Once Per Visit Cookies
+ 
+  let popup = Cookies.set('popUpShown');
+
+  if (!popup) {
+        swal("Welcome to CryptoTrade ", " This proof of concept cryptocurrency trading website allows you to enter apikeys from Poloniex and place actual trades. This is a fully functional cryptocurrency trading website.");
+          Cookies.set('popUpShown', true,{ expires: 1 });
+      }
 
     axios.get('/trading/accounts')
     .then((results)=>{
