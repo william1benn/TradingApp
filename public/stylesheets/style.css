@@ -148,8 +148,7 @@ form.login-form {
   font-family: 'Space Mono', monospace;
   background-color: #173a04;
   font-size: 12px;
-  padding: 4px;
-  width: 43%;
+  padding: 5px;
   text-align: center;
   border-radius: 4px; }
 
@@ -160,7 +159,6 @@ form.login-form {
   background-color: #23cc75;
   font-size: 12px;
   padding: 4px;
-  width: 43%;
   text-align: center;
   transition: 500ms; }
 
@@ -170,8 +168,7 @@ form.login-form {
   font-family: 'Space Mono', monospace;
   background-color: #7e4439;
   font-size: 12px;
-  padding: 4px;
-  width: 43%;
+  padding: 5px;
   text-align: center;
   border-radius: 4px; }
 
@@ -182,7 +179,6 @@ form.login-form {
   background-color: #e1595b;
   font-size: 12px;
   padding: 4px;
-  width: 43%;
   text-align: center;
   transition: 500ms; }
 
