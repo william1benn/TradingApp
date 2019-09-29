@@ -19,7 +19,7 @@ const User  = require("./models/User");
 const alerts = require("sweetalert");
 var encryptor = require('simple-encryptor');
 
-
+//William Bennett
 
 mongoose
   .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
@@ -34,6 +34,8 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+
+
 
 // Middleware Setup
 app.use(logger('dev'));
